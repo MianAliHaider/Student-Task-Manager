@@ -4,21 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Task Manager</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div class="container">
+
         <h1>Student Task Manager</h1>
 
-        <input type="text" id="taskInput" placeholder="Enter a task">
+        <h2>Add New Task</h2>
+
+        <label for="taskTitle">Task Title:</label>
+        <input type="text" id="taskTitle" placeholder="Enter task title">
+
+        <br><br>
+
+        <label for="taskDescription">Description:</label>
+        <textarea id="taskDescription" placeholder="Enter task description"></textarea>
+
+        <br><br>
 
         <button onclick="addTask()">Add Task</button>
 
+        <h2>Tasks</h2>
+
         <ul id="taskList"></ul>
+
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
