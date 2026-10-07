@@ -1,45 +1,203 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+    color: #333333;
+    min-height: 100vh;
+    padding: 30px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .container {
-    max-width: 600px;
-    margin: auto;
-    background: white;
-    padding: 20px;
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 h1 {
     text-align: center;
+    color: #1f2937;
+    margin-bottom: 24px;
+    font-size: 1.85rem;
+    font-weight: 700;
 }
 
-input {
-    padding: 10px;
-    width: 70%;
+h2 {
+    color: #374151;
+    font-size: 1.25rem;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 8px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #4b5563;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background-color: #f8fafc;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #3b82f6;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
 textarea {
-    padding: 10px;
-    width: 70%;
-    height: 80px;
+    min-height: 85px;
+    resize: vertical;
 }
 
 button {
-    padding: 10px;
+    font-family: inherit;
+    font-weight: 600;
+    border-radius: 8px;
     cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+/* Add Task button (in container form) */
+.container > button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #3b82f6;
+    color: #ffffff;
+    font-size: 1rem;
+    margin-top: 5px;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+}
+
+.container > button:hover {
+    background-color: #2563eb;
+    box-shadow: 0 6px 12px rgba(37, 99, 235, 0.25);
+    transform: translateY(-1px);
+}
+
+.container > button:active {
+    transform: translateY(0);
+}
+
+/* Task list styles */
+#taskList {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 li {
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #f4f4f4;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+li:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
+}
+
+li span {
+    flex-grow: 1;
+    word-break: break-word;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #1e293b;
+    transition: color 0.2s ease;
 }
 
 .completed {
     text-decoration: line-through;
+    color: #94a3b8;
 }
-```
+
+/* Buttons inside task card items */
+li button {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+/* Complete / Undo button */
+li button:first-of-type {
+    background-color: #10b981;
+    color: #ffffff;
+}
+
+li button:first-of-type:hover {
+    background-color: #059669;
+}
+
+/* Delete button */
+li button:last-of-type {
+    background-color: #ef4444;
+    color: #ffffff;
+}
+
+li button:last-of-type:hover {
+    background-color: #dc2626;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+    body {
+        padding: 16px 10px;
+    }
+
+    .container {
+        padding: 20px 16px;
+        border-radius: 8px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    li {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    li button {
+        width: 100%;
+        padding: 10px;
+    }
+}
