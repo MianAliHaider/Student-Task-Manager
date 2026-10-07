@@ -1,4 +1,4 @@
-# Student Task Manager
+# Student Task Management Application
 
 ## Project Description
 
@@ -31,3 +31,4 @@ This project uses Git for version control and GitHub for remote repository manag
 ## Author
 
 Mian Ali Haider
+M Imran Mian
