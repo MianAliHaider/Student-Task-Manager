@@ -46,6 +46,3 @@ function addTask() {
     taskTitle.value = "";
     taskDescription.value = "";
 }
-/* Task 25 — Demonstrate Git Revert */
-
-
